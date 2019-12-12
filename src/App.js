@@ -1,21 +1,19 @@
 import React from 'react';
+import MainLayout from './components/layout/MainLayout/MainLayout';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter basename={'/panel'}>
+        <MainLayout>
+          <Switch>
+            <Route exact path={`${process.env.PUBLIC_URL}/`} component={Homepage} />
+            <Route exact path={process.env.PUBLIC_URL + '/login'} component={Login} />
+          </Switch>
+        </MainLayout>
+      </BrowserRouter>
+   
     </div>
   );
 }
