@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from '../Header/Header';
+import PageNav from '../PageNav/PageNav';
+// import Header from '../Header/Header';
 
 const MainLayout = ({children}) => (
   <div>
-    <Header />
-    <main>
+    {/* <Header /> */}
+    <PageNav />
+    <div>
+
       {children}
-    </main>
+    </div>
   </div>
 );
 
